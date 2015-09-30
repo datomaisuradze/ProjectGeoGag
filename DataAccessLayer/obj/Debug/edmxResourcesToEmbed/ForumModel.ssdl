@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ForumDBContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="CommentText" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CommentUser" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentCommentReply">
+    <Key>
+      <PropertyRef Name="CommentCommentReplyID" />
+    </Key>
+    <Property Name="CommentCommentReplyID" Type="int" Nullable="false" />
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="CommentReplyID" Type="int" Nullable="false" />
+    <Property Name="CommentCommentReplyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentReply">
+    <Key>
+      <PropertyRef Name="CommentReplyID" />
+    </Key>
+    <Property Name="CommentReplyID" Type="int" Nullable="false" />
+    <Property Name="CommentReplyText" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CommentReplyUser" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="PostCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostText" Type="nchar" MaxLength="2000" Nullable="false" />
+    <Property Name="PostUser" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostComment">
+    <Key>
+      <PropertyRef Name="PostCommentID" />
+    </Key>
+    <Property Name="PostCommentID" Type="int" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="PostCommentDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_CommentCommentReply_Comment">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="CommentCommentReply" Type="Self.CommentCommentReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="CommentCommentReply">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentCommentReply_CommentReply">
+    <End Role="CommentReply" Type="Self.CommentReply" Multiplicity="1" />
+    <End Role="CommentCommentReply" Type="Self.CommentCommentReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommentReply">
+        <PropertyRef Name="CommentReplyID" />
+      </Principal>
+      <Dependent Role="CommentCommentReply">
+        <PropertyRef Name="CommentReplyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComment_Comment">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="PostComment" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="PostComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComment_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostComment" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="PostComment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ForumDBContextStoreContainer">
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentCommentReply" EntityType="Self.CommentCommentReply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentReply" EntityType="Self.CommentReply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostComment" EntityType="Self.PostComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CommentCommentReply_Comment" Association="Self.FK_CommentCommentReply_Comment">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="CommentCommentReply" EntitySet="CommentCommentReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentCommentReply_CommentReply" Association="Self.FK_CommentCommentReply_CommentReply">
+      <End Role="CommentReply" EntitySet="CommentReply" />
+      <End Role="CommentCommentReply" EntitySet="CommentCommentReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComment_Comment" Association="Self.FK_PostComment_Comment">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="PostComment" EntitySet="PostComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComment_Post" Association="Self.FK_PostComment_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="PostComment" EntitySet="PostComment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

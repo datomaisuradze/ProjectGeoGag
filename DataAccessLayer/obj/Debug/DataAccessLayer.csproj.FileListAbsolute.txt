@@ -1,0 +1,16 @@
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\EntityFramework.dll
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\EntityFramework.xml
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\BusinessLogicLayer.dll
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.InitialCreate.resources
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.Cache
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.InsertValues.resources
+E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangeColumn.resources

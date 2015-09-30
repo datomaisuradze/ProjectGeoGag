@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ForumDBContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="CommentText" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CommentUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CommentCommentReplies" Relationship="Self.FK_CommentCommentReply_Comment" FromRole="Comment" ToRole="CommentCommentReply" />
+    <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComment_Comment" FromRole="Comment" ToRole="PostComment" />
+  </EntityType>
+  <EntityType Name="CommentCommentReply">
+    <Key>
+      <PropertyRef Name="CommentCommentReplyID" />
+    </Key>
+    <Property Name="CommentCommentReplyID" Type="Int32" Nullable="false" />
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="CommentReplyID" Type="Int32" Nullable="false" />
+    <Property Name="CommentCommentReplyDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_CommentCommentReply_Comment" FromRole="CommentCommentReply" ToRole="Comment" />
+    <NavigationProperty Name="CommentReply" Relationship="Self.FK_CommentCommentReply_CommentReply" FromRole="CommentCommentReply" ToRole="CommentReply" />
+  </EntityType>
+  <EntityType Name="CommentReply">
+    <Key>
+      <PropertyRef Name="CommentReplyID" />
+    </Key>
+    <Property Name="CommentReplyID" Type="Int32" Nullable="false" />
+    <Property Name="CommentReplyText" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CommentReplyUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CommentCommentReplies" Relationship="Self.FK_CommentCommentReply_CommentReply" FromRole="CommentReply" ToRole="CommentCommentReply" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="Int32" Nullable="false" />
+    <Property Name="PostCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostText" Type="String" MaxLength="2000" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PostUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComment_Post" FromRole="Post" ToRole="PostComment" />
+  </EntityType>
+  <EntityType Name="PostComment">
+    <Key>
+      <PropertyRef Name="PostCommentID" />
+    </Key>
+    <Property Name="PostCommentID" Type="Int32" Nullable="false" />
+    <Property Name="PostID" Type="Int32" Nullable="false" />
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="PostCommentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_PostComment_Comment" FromRole="PostComment" ToRole="Comment" />
+    <NavigationProperty Name="Post" Relationship="Self.FK_PostComment_Post" FromRole="PostComment" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_CommentCommentReply_Comment">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="CommentCommentReply" Type="Self.CommentCommentReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="CommentCommentReply">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComment_Comment">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="PostComment" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="PostComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentCommentReply_CommentReply">
+    <End Role="CommentReply" Type="Self.CommentReply" Multiplicity="1" />
+    <End Role="CommentCommentReply" Type="Self.CommentCommentReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommentReply">
+        <PropertyRef Name="CommentReplyID" />
+      </Principal>
+      <Dependent Role="CommentCommentReply">
+        <PropertyRef Name="CommentReplyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComment_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostComment" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="PostComment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ForumEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="CommentCommentReplies" EntityType="Self.CommentCommentReply" />
+    <EntitySet Name="CommentReplies" EntityType="Self.CommentReply" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="PostComments" EntityType="Self.PostComment" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_CommentCommentReply_Comment" Association="Self.FK_CommentCommentReply_Comment">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="CommentCommentReply" EntitySet="CommentCommentReplies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComment_Comment" Association="Self.FK_PostComment_Comment">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="PostComment" EntitySet="PostComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentCommentReply_CommentReply" Association="Self.FK_CommentCommentReply_CommentReply">
+      <End Role="CommentReply" EntitySet="CommentReplies" />
+      <End Role="CommentCommentReply" EntitySet="CommentCommentReplies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComment_Post" Association="Self.FK_PostComment_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="PostComment" EntitySet="PostComments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

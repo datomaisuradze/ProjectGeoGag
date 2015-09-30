@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoGag", "ProjectForum\GeoGag.csproj", "{98ED101A-BC06-4DEB-8F9B-F9731FC77B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{9434CD88-E2F9-474C-A354-7F2C14B63FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C78025DB-788F-4D13-9BC5-50B06F191946}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98ED101A-BC06-4DEB-8F9B-F9731FC77B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ED101A-BC06-4DEB-8F9B-F9731FC77B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ED101A-BC06-4DEB-8F9B-F9731FC77B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ED101A-BC06-4DEB-8F9B-F9731FC77B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9434CD88-E2F9-474C-A354-7F2C14B63FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9434CD88-E2F9-474C-A354-7F2C14B63FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9434CD88-E2F9-474C-A354-7F2C14B63FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9434CD88-E2F9-474C-A354-7F2C14B63FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78025DB-788F-4D13-9BC5-50B06F191946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78025DB-788F-4D13-9BC5-50B06F191946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78025DB-788F-4D13-9BC5-50B06F191946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78025DB-788F-4D13-9BC5-50B06F191946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

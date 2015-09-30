@@ -1,0 +1,40 @@
+﻿body {
+}
+
+/*.ForumHead{
+    background-color:#3f971a;
+    color:#ffffff;
+    font-family:'Tangerine';
+    font-size:20px;
+}
+ 
+.customLinkStyle > li:not(.well){
+    background-color:#f4fff0;
+    border-radius:3px;
+}
+
+li.list-group-item > a{
+    color:#131a94;
+    text-decoration:none;
+}
+
+.customLinkStyle > li:not(.well):hover{
+    background-color:#ffffff;
+}*/
+
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}

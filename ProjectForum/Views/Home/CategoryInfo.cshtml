@@ -1,0 +1,21 @@
+﻿@*@model IEnumerable<DataAccessLayer.Post>*@
+@{
+    ViewBag.Title = "CategoryInfo";
+}
+
+<h2>CategoryInfo</h2>
+
+<table class="table-striped">
+    @*@foreach (var post in Model)
+    {
+        <tr>
+            <td class="text-center"><i class="fa fa-heart fa-2x text-primary"></i></td>
+            <td>
+                <h4><a href="/Home/PostInfo/@post.PostName">@post.PostName</a><br></h4>
+            </td>
+            <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+            <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+            <td class="hidden-xs hidden-sm">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+        </tr>
+    }*@
+</table>
