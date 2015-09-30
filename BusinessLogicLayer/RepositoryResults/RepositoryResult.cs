@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogicLayer.RepositoryResutlts
+namespace BusinessLogicLayer.RepositoryResults
 {
     public class RepositoryResult<T>
     {

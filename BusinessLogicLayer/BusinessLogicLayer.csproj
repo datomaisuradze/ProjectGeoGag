@@ -48,8 +48,8 @@
     <Compile Include="Model\Post.cs" />
     <Compile Include="Model\PostComment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryResutlts\RepositoryResult.cs" />
-    <Compile Include="RepositoryResutlts\ServiceResult.cs" />
+    <Compile Include="RepositoryResults\RepositoryResult.cs" />
+    <Compile Include="RepositoryResults\ServiceResult.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\HomeService.cs" />
   </ItemGroup>
