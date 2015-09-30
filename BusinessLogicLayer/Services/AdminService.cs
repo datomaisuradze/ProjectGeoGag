@@ -9,7 +9,7 @@ namespace BusinessLogicLayer.Services
 {
     public class AdminService
     {
-        public IAdminRepository AdminRepository { get; set; }
+        public IAdminRepository AdminRepository;
 
         public AdminService(IAdminRepository adminRepository)
         {

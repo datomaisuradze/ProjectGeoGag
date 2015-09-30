@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,19 @@ namespace BusinessLogicLayer.Services
 {
     public class HomeService
     {
-        public IHomeRepository HomeRepository { get; set; }
+        public IHomeRepository HomeRepository;
 
         public HomeService(IHomeRepository homeRepository)
         {
-            this.HomeRepository = HomeRepository;
+            this.HomeRepository = homeRepository;
+        }
+
+        public IEnumerable<Post> GetPosts
+        {
+            get
+            {
+                return HomeRepository.GetPosts;
+            }
         }
     }
 }

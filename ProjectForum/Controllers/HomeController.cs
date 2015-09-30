@@ -6,16 +6,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataAccessLayer;
+using BusinessLogicLayer.Services;
 
 namespace ProjectForum.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext ProjectForumdb = new ApplicationDbContext();
+        HomeService homeService;
+
+        public HomeController(HomeService homeService)
+        {
+            this.homeService = homeService;
+        }
+
 
         public ActionResult Index()
         {
-            return View();
+            return View(homeService.GetPosts);
         }
 
         public ActionResult CategoryInfo(string id)
