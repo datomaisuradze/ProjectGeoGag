@@ -3,3 +3,8 @@ E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\BusinessLogicLayer\bin\Debug
 E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
 E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 E:\C#_.NET_SQL\C#_.NET_SQL\ASP.NET MVC\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+C:\Users\progr\Desktop\ProjectForum\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\progr\Desktop\ProjectForum\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\progr\Desktop\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+C:\Users\progr\Desktop\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\progr\Desktop\ProjectForum\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
